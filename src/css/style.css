@@ -1,0 +1,675 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root{
+  --primary-color: #1e8f36;
+  --secondary-color: #f9f871;
+  --tertiary-color: #f9f9f9;
+  --dark-color: #333;
+  --border: 1px solid black;
+}
+
+a{
+  color: var(--dark-color);
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1f1f1;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.container_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.links-lien{
+  display: flex;
+  gap: 20px;
+}
+
+.links-lien a{
+ font-weight: 600;
+}
+.header_links,
+.logo_links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo_btn button,
+.banner_button{
+  padding: 15px 20px; 
+  background-color: var(--primary-color); 
+  color: #fff; 
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  }
+
+  .menu{
+    display: none;
+  }
+
+  
+  
+  @media screen and (max-width: 768px){
+    .container_header{
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .links{
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      z-index: 2;
+      top: 100px;
+      left: 100%;
+      bottom: 30%;
+      right: 0;
+      backdrop-filter: blur(7px);
+      background-color: rgba(0, 0, 0, 0.534);
+      transition: left 300ms ease-in-out;
+    }
+    
+    .links-lien{
+      position: absolute;
+      top:0;
+      left: 50%;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      font-size: 5vw;
+      opacity: 0.8;
+      background-color: var(--primary-color);
+    }
+    .links a{
+      color: white;
+    }
+
+    .logo_btn button{
+      width: 100%;
+    }
+
+    .menu{
+      display: block;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .fa-solid{
+      font-size: 30px;
+    }
+    
+    .hide{
+      left: 0%;
+    }
+  }
+
+  /* banner section */
+
+  .banner{
+    padding: 0 40px;
+    background-color: white;
+  }
+
+  .container_banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+
+  .banner_text_content{
+    margin: 20px 0;
+  }
+
+  .banner_text_content h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  .banner_text_content h1+p{
+    opacity: 0.8;
+  }
+
+  .banner_text h3{
+    color: var(--primary-color);
+  }
+
+  .banner_text_content h1{
+    margin-bottom: 0.5rem;
+  }
+
+  .banner_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+  }
+  
+  .image-container {
+    border-radius: 50%;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    width: 70%;
+    height: 70%;
+    overflow: hidden; /* Masque les bords qui dépassent */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  
+  .image,
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Remplit le conteneur */
+    background-position: center; /* Centre l'image et le masque */
+  }
+  
+  .image {
+    background: url("../assets/images/dan-meyers-IQVFVH0ajag-unsplash(1).jpg") no-repeat center center/cover;
+    width:100%;
+  }
+  
+  .mask {
+    background: url("../assets/images/2b638b56-6098-4091-8e7b-05e891b5a34d.jpg") no-repeat center center/cover;
+    mix-blend-mode: screen;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px){
+
+    .container_header{
+      flex-direction: row;
+    }
+    .container_banner{
+      flex-direction: column;
+      padding: 50px 0;
+      gap: 20px;
+    }
+
+    .banner_image{
+      display: none;
+      text-align: center;
+    }
+
+    .banner_text{
+      text-align: center;
+    }
+    
+  }
+
+  /*  Section Presentation */
+
+  .container_presentation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px 80px 40px;
+    gap: 40px;
+    background-color: white;
+  }
+
+  .description_produit, 
+  .presentation_produit{
+    background-color: var(--tertiary-color);
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .presentation_produit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 40%;
+    height: 425px;
+  }
+
+  .description_produit{
+    padding: 50px;
+  }
+
+  .description_produit_title{
+    margin-bottom: 3rem;
+  }
+
+  .description_produit_title h2{
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  .description_produit_img{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+ .description_produit_img img{
+    border-radius: 0 100px 0 100px;
+    border: 10px solid rgba(128, 128, 128, 0.4);
+  }
+
+  @media screen and (max-width: 768px){
+    .container_presentation{
+      flex-direction: column;
+      gap: 20px;
+      padding: 40px 0;
+    }
+
+    .presentation_produit{
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .description_produit{
+      padding: 20px;
+    }
+
+    .description_produit_title{
+      text-align: center;
+    }
+
+    .description_produit_img{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .description_produit_img img{
+      width: 100%;
+    }
+    
+  }
+
+  /* section produits */
+
+  .section_produits{
+    padding: 80px 40px;
+  }
+
+  .produit_title h2{
+    color: var(--primary-color);
+  }
+
+  .container_produits{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .container_produits_items{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  div[class*="produit_items"]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 20%;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    padding-top: 10px;
+    overflow: hidden;
+  }
+  div[class*="produit_item_title"]{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  div[class*="produit_item_title"] h3 + p
+  {
+    opacity: 0.5;
+  }
+
+  div[class*="produit_item_star"] + button{
+    width: 100%;
+    border-radius: 0;
+  }
+
+  @media screen and (max-width: 768px){
+    .container_produits_items{
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    div[class*="produit_items"]{
+      width: 100%;
+    }
+    
+  }
+
+  /* temoignage */
+
+  .temoignages{
+    background: url("../assets/images/e-diop-byZ30s8xUgM-unsplash.jpg") no-repeat center center/cover;
+    padding: 80px 40px;
+    text-align: center;
+
+  }
+  .temoignages_title h2{
+    margin-bottom: 20px;
+  }
+  .temoignages_title h2+h3{
+   font-size: 1rem;
+   opacity: 0.8;
+  }
+
+  .temoignage_title h3{
+    color: var(--primary-color);
+  }
+
+  .container_temoignages{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .temoignage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 22%;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 25px;
+    overflow: hidden;
+
+  }
+
+  div[class*="temoignage temoignage_"] img{
+    clip-path: circle(50% at 50% 50%);
+    margin-bottom: 20px;
+  }
+
+  .temoignages_title  h3{
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 768px){
+    .container_temoignages{
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .temoignage{
+      width: 100%;
+    }
+    
+  }
+
+  /* section details */
+  .container_details{
+    display: flex;
+    gap: 20px;
+    padding: 80px 40px;
+  }
+
+  .details_imgLeft{
+    width: 50%;
+  }
+
+  .details_text{
+    margin-top: 40px;
+  }
+
+  .details_imgRight{
+    width: 50%;
+  }
+
+  @media screen and (max-width: 768px){
+    .container_details{
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .details_imgLeft,
+    .details_imgRight{
+      width: 100%;
+    }
+    
+  }
+
+  /* newsletter */
+
+  .section_newsletter{
+    position: relative;
+    background: url("../assets/images/shumilov-ludmila-j7X_hySaUa4-unsplash.jpg") no-repeat center center/cover;
+    padding: 100px;
+    text-align: center;
+  }
+
+  .section_newsletter::before{
+    position: absolute;
+    content: "";
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #333;
+    opacity: 0.5;
+  }
+
+  .section_newsletter form{
+    position: relative;
+    z-index: 1;
+  }
+
+  .input input{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .btn_submit button{
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px !important;
+  }
+
+  @media screen and (max-width: 768px){
+    .input input{
+      width: 100%;
+    }
+    
+  }
+
+  /* services */
+
+  .section_services{
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .container_services{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 22%;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 25px;
+    overflow: hidden;
+  }
+
+  .service_title h2{
+    margin-bottom: 40px;
+  }
+
+  div[class*="services service_"] img{
+    clip-path: circle(50% at 50% 50%);
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 768px){
+    .container_services{
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .service{
+      width: 100%;
+    }
+    
+  }
+
+  /* contact */
+
+  .section_contact{
+    background: url("../assets/images/dan-meyers-IQVFVH0ajag-unsplash\(1\).jpg") no-repeat center center/cover;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .contact_title h2{
+    margin-bottom: 40px;
+  }
+
+  .contact_form form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .input_text input,
+  .input_email input,
+  .input_message textarea{
+    width: 600px;
+    height: 50px;
+    padding-left: 20px;
+  }
+
+  .input_message textarea{
+    height: 150px;
+    padding-top: 10px;
+  }
+
+  .btn_submit button{
+    width: 600px;
+  }
+
+  @media screen and (max-width: 768px){
+    .input_text input,
+    .input_email input,
+    .input_message textarea{
+      width: 100%;
+    }
+
+    .btn_submit button{
+      width: 100%;
+    }
+    
+  }
+
+  /* footer */
+
+  footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .footer_objectifs,
+  .footer_heures,
+  .footer_contact{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+  }
+
+  .footer_objectifs_span,
+  .footer_heures_span,
+  .footer_contact_span{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 768px){
+    footer{
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+  }
+
+
+  /* menu hamburger */
